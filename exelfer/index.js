@@ -36,10 +36,6 @@ app.post('/', (req, res) => {
                     res.send(result);
                     // console.log(result);
                     // res.send('File ' + filename + ' uploaded');
-                    del(['./excel/' + filename])
-                        .then(paths => {
-                            console.log('Deleted files and folders:\n', paths.join('\n'));
-                        });
                 }
             });
     }
