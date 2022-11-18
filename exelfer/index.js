@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require('fs');
 const upload = require('express-fileupload');
 const importExcel = require('convert-excel-to-json');
 
@@ -36,6 +37,14 @@ app.post('/', (req, res) => {
                     res.send(result);
                     // console.log(result);
                     // res.send('File ' + filename + ' uploaded');
+                    fs.rm('./excel/' + filename, { recursive: true, force: true }, (err) => {
+                        if(err) {
+                            console.log(err);
+                        }
+                        else {
+                            console.log('File deleted');
+                        }
+                    });
                 }
             });
     }
