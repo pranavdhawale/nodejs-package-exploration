@@ -30,7 +30,8 @@ app.post('/', (req, res) => {
                         },
                         columnToKey: {
                             A: 'name',
-                            B: 'password'
+                            B: 'enrollment no',
+                            C: 'password',
                         },
                         sheets: ['Sheet1']
                     });
