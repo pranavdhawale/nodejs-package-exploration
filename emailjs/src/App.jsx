@@ -1,9 +1,10 @@
 import React from "react";
+import EmailJS from "./emailjs";
 
 export default function App() {
   return (
     <>
-      <h1>Hello World</h1>
+    <EmailJS />
     </>
   )
 }
