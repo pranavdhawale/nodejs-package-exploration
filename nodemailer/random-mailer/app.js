@@ -1,24 +1,17 @@
-const nodemailer = require('nodemailer');
+const express = require('express');
+const app = express();
+const router = express.Router();
+const port = 3000;
 
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'fw20co001@gmail.com',
-        pass: 'myrollno'
-    }
+// import nodemailer controller
+const controller = require('./nodemailer');
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
 });
 
-const mailOptions = {
-    from: 'fw20co001@gmail.com',
-    to: 'pranavdhawale19@gmail.com',
-    subject: 'Sending Email using Node.js',
-    text: 'That was easy!'
-};
+router.get('/send', controller.send);
 
-transporter.sendMail(mailOptions, function(error, info){
-    if (error) {
-        console.log(error);
-    } else {
-        console.log('Email sent: ' + info.response);
-    }
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
