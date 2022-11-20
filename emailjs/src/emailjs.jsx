@@ -20,11 +20,11 @@ export default function EmailJS() {
         <>
         <form onSubmit={sendEmail}>
             <div className="flex flex-col">
-                <div className="">
+                <div>
                     <label>Name</label>
                     <input className="border" type="text" name="user_name" />
                 </div>
-                <div className="">
+                <div>
                     <label>Email</label>
                     <input className="border" type="email" name="user_email" />
                 </div>
