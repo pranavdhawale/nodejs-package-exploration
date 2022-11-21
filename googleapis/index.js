@@ -26,5 +26,21 @@ async function gsrun(cl) {
     };
 
     let data = await gsapi.spreadsheets.values.get(opt);
-    console.log(data.data.values);
+    let dataArray = data.data.values;
+    // console.log(dataArray);
+    let newDataArray = dataArray.map(function(r) {
+        r.push(r[0] + '-' + r[1]);
+        return r;
+    })
+    // console.log(newDataArray);
+    
+    const update = {
+        spreadsheetId: '1j9j26-B9c1NIZ7YcNrhVISXJHxfrFDFbTnveu6-zPfo',
+        range: 'C2',
+        valueInputOption: 'USER_ENTERED',
+        resource: { values: newDataArray }
+    };
+
+    let res = await gsapi.spreadsheets.values.update(update);
+    console.log(res);
 }
