@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "shaped-density-369301",
+  "private_key_id": "f7cf78b6cb4495248a9c9ca924ba3e94a46d0df6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQDTuOz2LM7Dg7Vp\nJvysYGWRkeS9wSTXMA2b6MKUmnjQjFd40ZzbCSUyf0LBWE0I6bzW747Z4sGfWAs+\nkuCEjMMu9L1tQKC1CWRxdiXM7wMPaKjSRGSw1bwC9jzMwZpc0zOaUJM2okabJtu1\nR0AenMaHYVj35nlZcNbB0G3Ktl6DFPd34QFRwPD9B2mgmDiFhXrjiHkx1plPPqMX\nPLy74flLOhnmbnTzKjYHcCC2aeuMdXL4WGz6UzK/MxEBYpNQM7URNY2LvwC4RguD\nCeUo4iG8oCX4f4bivvWzMiKXQKVPUBDrlBxfEAcYcVvElN6uN2HH2rSNbVMr6k0j\naOwhsOMLAgMBAAECgf9s5FpQ7WVqfqh5wejdagwofTYoYi47KXvWXuBfjb3q2kN4\nNawhpj0mEPiZzdB7xREFetr93/e1pz12nBQywt2gSOp5m8O2rh3658kz8w9KiDRL\n8OEuEhT2G68poGluqdw11zs1M5ZyNd91B4WdjlninIQlprltnEYtaLBkkhIKAs7x\nRvFL2RYIYpvlj+BPY39G8p/KPzfz1bsZ3J9aIbdeV7Vrtkq0eDsHmMgmiTrNLjrr\ntgzIHdUj82USTX6aiB81Rap6UjTL7kSfeo/TTmYgIzF1OeF+Sq2ypr9U/9TUJpig\ncim8Po5CL9Au6IF2X04eRAm0TCBndkbRk9WW/SECgYEA8fmN1gis1RFqJpxIWBmm\ngzE+7LdhdpmHUj59Uzqt1A/d+xqLm0daDaqONLkPpTSOK2FI0yiyDEccmAegCbrZ\nD8iJDpcbbJ928lPv61RHSaQccrPcrnAY6kAuI+A2IBFW+9w+rG8yOtBitx9V2Mkf\n5uTFJ5qes35ngugLNeVV85sCgYEA3/57kym6k2ciK8kAmgbmeKuW3VpNla8hkm30\ncimKNcIM5t8owYdVyran9Y3oxBEcXMfIXeIoDqNIocNCaLZbLeQZnzLhwy3uFN3u\n14muf8M35ptQhq88EfNYrbwR+uH6M04eG/q9eaSWmtpIs4N3M/A7fCfymSEGU7tT\nXmq23VECgYEAgYLFRIqOHthcTWAWZHkOI2fHOyGHm9feksl5gIOGqFr5v71cfXa6\nH1hrFpL6abzwXw2J0eMVMPcaudBS+wIzzXvSx6le90t+eYMthXItWZ/pzgawlfjP\njQle6LrHnXBKczFVpis54jrIqyStaQN0/LrzPxhF2uJL+sfBwE4ILAMCgYAB7Jq9\nKeebapBlleV2bUa/lKHIJwVxmr6MFnu6G1c/nPolZZdhCjuXcThCKMTuIkN/HIxB\nGjdD4O03zoicg6yG2WXK81HzLkrUTQ/HNDyWhmPNjFoFvi2i7dc+LtZstFJE7I/f\np6jHCb3teKCVQjTc8lxgdatk217Fi19s+Te28QKBgDq4YUJCAiaihn2dx3ve05Z1\nJcQW1ywdWj3maOWh7xW9OqANuZ6Vthd+ZA7FN7DdY5mUHpCtmbDl7ItwTcKApbro\nekfH29dYi+jH2gwaJqBiCUtsrtomg25L8wECnjU8p6OYyI1YpXgN9/3juWwdJbMv\nQB3MkpxKKlHPaKvc+Npq\n-----END PRIVATE KEY-----\n",
+  "client_email": "upload-19@shaped-density-369301.iam.gserviceaccount.com",
+  "client_id": "107190290090903513423",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/upload-19%40shaped-density-369301.iam.gserviceaccount.com"
+}
