@@ -33,7 +33,7 @@ app.post('/', (req, res) => {
 
     const mailOptions = {
         from: process.env.EMAIL,
-        to: "umangsomani7@gmail.com",
+        to: /*email address to send mail to*/"",
         subject: "Sending Email using Node.js",
         text: 'Hello!\n' + 'Pranav here'
     };
