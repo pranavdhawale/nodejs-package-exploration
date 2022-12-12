@@ -38,6 +38,112 @@ app.get('/', (req, res) => {
     })
 })
 
+app.post('/insert-many', async (req, res) => {
+    const data = req.body
+    // console.log(data);
+
+    try {
+        data.forEach(async element => {
+            await Inventory.create({
+                item: element.item,
+                qty: element.qty,
+                size: {
+                    h: element.size.h,
+                    w: element.size.w,
+                    uom: element.size.uom
+                },
+                status: element.status
+            })
+        });
+        res.status(201).json({
+            message: "Items added successfully",
+            data
+        })
+
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
+})
+
+app.get('/get-all', async (req, res) => {
+    try {
+        let items = await Inventory.find({})
+        res.status(200).json({
+            items
+        })
+    }
+    catch(err) {
+        console.log(err);
+    }
+})
+
+app.get('/get-status', async (req, res) => {
+    const { status } = req.body
+    try {
+        let items = await Inventory.find({ status })
+        res.status(200).json({
+            items
+        })
+    }
+    catch(err) {
+        console.log(err);
+    }
+})
+
+app.get('/get-multiple-status', async (req, res) => {
+    const { status1, status2 } = req.body
+    try {
+        let items = await Inventory.find({ status: { $in: [status1, status2]} })
+        res.status(200).json({
+            items
+        })
+    }
+    catch(err) {
+        console.log(err);
+    }
+})
+
+app.get('/and', async (req, res) => {
+    const { status, qty } = req.body
+    try {
+        let items = await Inventory.find({ status, qty: { $lt: qty} })
+        res.status(200).json({
+            items
+        })
+    }
+    catch(err) {
+        console.log(err);
+    }
+})
+
+app.get('/or', async (req, res) => {
+    const { status, qty } = req.body
+    try {
+        let items = await Inventory.find({ $or: [ { status: status }, { qty: { $lt: qty } } ] })
+        res.status(200).json({
+            items
+        })
+    }
+    catch(err) {
+        console.log(err);
+    }
+})
+
+app.get('/and-or', async (req, res) => {
+    const { status, qty } = req.body
+    try {
+        let items = await Inventory.find({ status, $or: [ { status: status }, { qty: { $lt: qty } } ] })
+        res.status(200).json({
+            items
+        })
+    }
+    catch(err) {
+        console.log(err);
+    }
+})
+
 app.listen(port, (req, res) => {
     console.log("Server running on port : " + port);
 })
