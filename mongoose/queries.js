@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 app.get('/find-single', async (req, res) => {
     const { name } = req.body
 
-    try{
+    try {
         let person = await Person.findOne({ name })
         res.status(200).json({
             person
@@ -55,7 +55,7 @@ app.get('/find-single', async (req, res) => {
 
 // find all people
 app.get('/find-all', async (req ,res) => {
-    try{
+    try {
         let people = await Person.find({})
         res.status(200).json({
             people
@@ -66,18 +66,39 @@ app.get('/find-all', async (req ,res) => {
     }
 })
 
-// add person route
-app.post('/add', async (req, res) => {
+// add single
+app.post('/add-single', async (req, res) => {
     const { name, age, height } = req.body
 
-    try{
+    try {
         const person = await Person.create({
             name,
             age,
             height
         })
-        res.status(200).json({
+        res.status(201).json({
             message: "Person added successfully"
+        })
+    }
+    catch(err) {
+        handleError(err)
+    }
+})
+
+// add multiple
+app.post('/add-multiple', async (req, res) => {
+    const data = req.body
+    
+    try{
+        data.forEach(async element => {
+            await Person.create({
+                name: element.name,
+                age: element.age,
+                height: element.height
+            })
+        });
+        res.status(201).json({
+            message: "People added successfully"
         })
     }
     catch(err) {
@@ -89,7 +110,7 @@ app.post('/add', async (req, res) => {
 app.post('/delete-one', async (req, res) => {
     const { name } = req.body
 
-    try{
+    try {
         await Person.deleteOne({ name })
         res.status(204).json({
             message: "Person deleted successfully"
@@ -104,7 +125,7 @@ app.post('/delete-one', async (req, res) => {
 // delete multiple
 app.post('/delete-multiple', async (req, res) => {
     const { min_age } = req.body
-    try{
+    try {
         await Person.deleteMany({ age: {$gt: min_age} })
         res.status(204).json({
             message: "People deleted successfully"
