@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 mongoose.set('strictQuery', false)
 
 // connect to mongodb
-const mongouri =  `mongodb+srv://admin:${process.env.ATLAS_PASSWORD}@mongoose.got2tml.mongodb.net/?retryWrites=true&w=majority`
+const mongouri =  `mongodb+srv://admin:${process.env.ATLAS_PASSWORD}@basic-queries.5xmvbmg.mongodb.net/?retryWrites=true&w=majority`
 mongoose.connect(mongouri, { useNewUrlParser: true });
 const connection = mongoose.connection;
 
