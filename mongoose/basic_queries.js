@@ -49,7 +49,7 @@ app.get('/find-single', async (req, res) => {
         })
     }
     catch(err) {
-        handleError(err)
+        console.log(err)
     }
 })
 
@@ -62,7 +62,7 @@ app.get('/find-all', async (req ,res) => {
         })
     }
     catch(err) {
-        handleError(err)
+        console.log(err)
     }
 })
 
@@ -81,7 +81,7 @@ app.post('/add-single', async (req, res) => {
         })
     }
     catch(err) {
-        handleError(err)
+        console.log(err)
     }
 })
 
@@ -102,7 +102,7 @@ app.post('/add-multiple', async (req, res) => {
         })
     }
     catch(err) {
-        handleError(err)
+        console.log(err)
     }
 })
 
@@ -117,7 +117,7 @@ app.post('/delete-one', async (req, res) => {
         })
     }
     catch(err) {
-        handleError(err)
+        console.log(err)
     }
 
 })
@@ -132,7 +132,7 @@ app.post('/delete-multiple', async (req, res) => {
         })
     }
     catch(err) {
-        handleError(err)
+        console.log(err)
     }
 })
 
