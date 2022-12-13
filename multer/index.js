@@ -27,9 +27,7 @@ connection.once('open', function() {
 );
 
 app.get('/', (req, res) => {
-    res.status(200).json({
-        message: "testing"
-    })
+    res.sendFile(__dirname + '/index.html')
 })
 
 app.get('/files', async (req, res) => {
