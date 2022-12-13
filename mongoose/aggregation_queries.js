@@ -90,6 +90,25 @@ app.get('/oa-atc', async (req, res) => {
 })
 
 
+// 
+//          AGGREGATION PIPELINE
+// 
+
+app.get('/aggregate-pipeline', async (req, res) => {
+    const { oa, atc } = req.body
+
+    try {
+        let items = await Aviation.find({ Operating_Airline: oa, Activity_Type_Code: atc })
+        res.status(200).json({
+            items
+        })
+    }
+    catch(err) {
+        console.log(err);
+    }
+
+})
+
 app.listen(port, (req, res) => {
     console.log("Server running on port : " + port);
 })
