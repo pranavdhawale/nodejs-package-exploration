@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const bcrypt = require('bcrypt')
 
 const app = express()
 const port = 8000
@@ -24,10 +25,32 @@ connection.once('open', function() {
     console.log("MongoDB database connection established successfully!");
 })
 
+
 app.get('/', (req, res) => {
     res.status(200).json({
         message: "testing"
     })
+})
+
+app.post('/register', async (req, res) => {
+    const { username, password } = req.body
+
+    try {
+        bcrypt.hash(password, 10, async function(err, hashedPassword) {
+            const user = await User.create({
+                username: username,
+                password: hashedPassword
+            })
+
+            res.status(201).json({
+                message: 'User created successfully',
+                user
+            })
+        })
+    }
+    catch(err) {
+        console.log(err);
+    }
 })
 
 app.listen(port, (req, res) => {
