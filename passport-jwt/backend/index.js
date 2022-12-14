@@ -7,6 +7,7 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const passport = require('passport')
+const cors = require('cors')
 
 const app = express()
 
@@ -15,6 +16,7 @@ const port = 8000
 app.use(bodyParser.json())
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cors())
 
 
 app.use(passport.initialize())
@@ -88,22 +90,27 @@ app.post('/login', async (req, res) => {
                     'secret',
                     { expiresIn: 30 },
                     (err, token) => {
-                        res.json({
+                        res.status(202).json({
                             success: true,
-                            token: 'Bearer ' + token
+                            message: 'Login Successfully!',
+                            token: 'Bearer ' + token,
+                            data: {
+                                id: user.id,
+                                username: user.username
+                            }
                         })
                     }
                 )
             }
             else{
                 res.status(401).json({
-                    message: "Password doesn't match"
+                    message: "Incorrect Credentials"
                 })
             }
         })
     }
-    catch {
-
+    catch(err) {
+        console.log(err);
     }
 })
 
